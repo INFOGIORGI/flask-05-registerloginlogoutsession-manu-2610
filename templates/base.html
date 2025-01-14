@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <div class="navbar">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('registrati')}}">Registrati</a></li>
+            {%block contenutoNavbar%}{%endblock%}
+        </ul>
+    </div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titolo}}</title> <!--le doppie graffe permettono di creare una variabile, da definire nella de di @app.route-->
+</head>
+<body>
+    <div class = "container">
+        {%block contenutoPagina%}{%endblock%}
+    </div>
+</body>
+</html>
