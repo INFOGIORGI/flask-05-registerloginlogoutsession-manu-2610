@@ -1,16 +1,10 @@
 {%extends 'base.html'%}
 {%block contenutoPagina%}
-    <form action="/registrati/" method="POST">
-        <h3>Nome</h3>
-        <input type="text" name = "nome">
-        <h3>Cognome</h3>
-        <input type="text" name = "cognome">
+    <form action="/login/" method="POST">
         <h3>Username</h3>
         <input type="text" name = "userName">
         <h3>Password</h3>
         <input type="password" name = "pass">
-        <h3>Conferma password</h3>
-        <input type="password" name = "confirmPass">
         <br>
         <br>
         <input type="submit" value = "Registrati">
