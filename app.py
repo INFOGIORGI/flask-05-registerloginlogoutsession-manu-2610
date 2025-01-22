@@ -58,13 +58,17 @@ def login():
     
     cursor = mysql.connection.cursor()
 
-    username = request.form.get("nome","")
+    username = request.form.get("userName","")
     password = request.form.get("pass","")
-    query = "SELECT password FROM users WHERE username = %s"
+    query = "SELECT * FROM users WHERE username = %s"
     cursor.execute(query, (username,))
-    hashPass = cursor.fetchone()
+    ris = cursor.fetchall()
 
-    if hashPass and check_password_hash(hashPass, password):
+    print(ris)
+
+    if len(ris)==0:
+        pass
+    elif check_password_hash(ris[0][1],password):
         flash("Login effettuato")
         return redirect(url_for("home"))
     
